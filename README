@@ -1,0 +1,11 @@
+Example use:
+
+$('.tabbers').tabbers();
+
+# Add a 500ms timeout, and allow multiple tabs to be open at the same time.
+
+$('.selector').tabbers({
+  active_tab: 1,
+  collapse_timer: 500,
+  allow_many_open_tabs: true
+})

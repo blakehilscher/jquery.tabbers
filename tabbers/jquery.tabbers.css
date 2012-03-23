@@ -1,0 +1,1 @@
+.tabbers .tabbers-header>ul,.tabbers .tabbers-content>ul{list-style:none;vertical-align:top;margin:0;padding:0;overflow:auto}.tabbers .tabbers-header>ul>li,.tabbers .tabbers-content>ul>li{padding:0;margin:0}.tabbers .tabbers-header>li:hover{cursor:pointer}.tabbers .tabbers-content>ul>li{display:none}.tabbers .tabbers-content>ul>li.tabit-expanded{display:block}
