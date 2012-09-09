@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <title>Jquery Tabbers</title>
+  <link rel="stylesheet" href="./tabbers/jquery.tabbers.css" />
+  <script type="text/javascript" src="./lib/jquery.js"></script>
+  <script type="text/javascript" src="./tabbers/jquery.tabbers.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.tabbers.first').tabbers();
+      
+      $('.tabbers').on('expand.tabbers', function(e,tabit){
+        $('#callbacks').prepend( $('<div></div>').html('Tabbers ' + tabit.children().html() + ' expanded.') )
+      });
+      
+    });
+  </script>
+  <style type="text/css">
+    body{
+      font-family:arial;
+      font-size:13px;
+      line-height:19px;
+    }
+    #callbacks{
+      border:1px solid #ddd;
+      background-color:#eee;
+      padding:10px;
+      margin:10px 0;
+    }
+    .tabbers-header{
+      overflow:auto;
+    }
+    .tabbers>.tabbers-header>ul>li{
+      float:left;
+      display:block;
+    }
+    .tabbers-header a{
+      text-decoration:none;
+      color:#333;
+      padding:6px 10px;
+      display:block;
+      background-color:#ddd;
+      border:1px solid #bbb;
+      border-radius:10px 10px 0 0;
+    }
+    .tabbers-header a:hover{
+      background-color:#eee;
+    }
+    .tabbers-header .tabit-expanded a{
+      background-color:#fff;
+    }
+    .tabbers>.tabbers-content>ul>.tabit{
+      border:1px solid #ddd;
+      padding:10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabbers first">
+    <div class="tabbers-header">
+      <ul>
+        <li class="tabit-head"><a href="#">Home</a></li>
+        <li class="tabit-head"><a href="#">About</a></li>
+        <li class="tabit-head"><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="tabbers-content">
+      <ul>
+        <li class="tabit">Welcome to jquery.tabbers.js plugin.</li>
+        <li class="tabit">
+          This is the jquery.tabbers plugin.
+          <a href="https://github.com/blakehilscher/jquery.tabbers">https://github.com/blakehilscher/jquery.tabbers</a>
+        </li>
+        <li class="tabit">blake@hilscher.ca</li>
+      </ul>
+    </div>
+  </div>
+  <div id="callbacks">
+    <strong>Callbacks</strong>
+  </div>
+</body>
+</html>
